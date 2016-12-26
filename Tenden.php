@@ -4,6 +4,7 @@ namespace Evai\Tenden;
 use Illuminate\Http\Request;
 
 /**
+ *
  * @method static Tenden any(string $route, Callable $callback)
  * @method static Tenden get(string $route, Callable $callback)
  * @method static Tenden post(string $route, Callable $callback)
@@ -130,12 +131,20 @@ class Tenden {
               if(!method_exists($controller, $segments[1])) {
                 echo "controller and action not found";
               } else {
-                call_user_func_array(array($controller, $segments[1]), [$matched, $request]);
+                  if (empty($matched)) {
+                      call_user_func_array(array($controller, $segments[1]), [$request]);
+                  } else {
+                      call_user_func_array(array($controller, $segments[1]), [$matched, $request]);
+                  }
               }
 
               if (self::$halts) return;
             } else {
-              call_user_func_array(self::$callbacks[$pos], $matched);
+                if (empty($matched)) {
+                    call_user_func_array(self::$callbacks[$pos], [$request]);
+                } else {
+                    call_user_func_array(self::$callbacks[$pos], [$matched, $request]);
+                }
 
               if (self::$halts) return;
             }
