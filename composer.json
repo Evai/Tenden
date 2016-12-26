@@ -1,5 +1,5 @@
 {
-	"name": "evai/ting",
+	"name": "evai/tenden",
 	"description": "Simple PHP router class.",
 	"license": "MIT",
 	"require": {
@@ -8,6 +8,6 @@
 	},
 	
 	"autoload": {
-		"psr-4": {"Evai\\Ting\\": ""}
+		"psr-4": {"Evai\\Tenden\\": ""}
 	}
 }
