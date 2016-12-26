@@ -1,18 +1,18 @@
 <?php
 
-namespace Evai\Ting;
+namespace Evai\Tenden;
 use Illuminate\Http\Request;
 
 /**
- * @method static Ting any(string $route, Callable $callback)
- * @method static Ting get(string $route, Callable $callback)
- * @method static Ting post(string $route, Callable $callback)
- * @method static Ting put(string $route, Callable $callback)
- * @method static Ting delete(string $route, Callable $callback)
- * @method static Ting options(string $route, Callable $callback)
- * @method static Ting head(string $route, Callable $callback)
+ * @method static Tenden any(string $route, Callable $callback)
+ * @method static Tenden get(string $route, Callable $callback)
+ * @method static Tenden post(string $route, Callable $callback)
+ * @method static Tenden put(string $route, Callable $callback)
+ * @method static Tenden delete(string $route, Callable $callback)
+ * @method static Tenden options(string $route, Callable $callback)
+ * @method static Tenden head(string $route, Callable $callback)
  */
-class Ting {
+class Tenden {
   public static $halts = false;
   public static $routes = array();
   public static $methods = array();
